@@ -11,6 +11,11 @@ const SimpleSelectButton = ({
   iconSize,
   buttonDefaultColor,
   buttonSelectedColor,
+  buttonSelectWidthBorder,
+  buttonDefaultWidthBorder,
+  buttonSelectBorderColor,
+  buttonDefaultBorderColor,
+  buttonWidth,
   textDefaultColor,
   textSelectedColor,
   isChecked,
@@ -26,10 +31,12 @@ const SimpleSelectButton = ({
         <View 
           style={{ 
             flexDirection: 'row',
+            width: buttonWidth,
             borderRadius: 5,
             overflow: 'hidden',
-            textAlign: 'center',
             justifyContent: 'center',
+            borderWidth: isChecked === true ? buttonSelectWidthBorder : buttonDefaultWidthBorder,
+            borderColor: isChecked === true ? buttonSelectBorderColor : buttonDefaultBorderColor,
             backgroundColor: isChecked === true ? buttonSelectedColor : buttonDefaultColor 
           }}>
             <Text
